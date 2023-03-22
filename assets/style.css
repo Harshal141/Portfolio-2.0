@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+    font-family: 'Open-sans', sans-serif;
+}
+p{
+    margin: 0;
+}
+
+:root{
+    --primaryt: #EEEEEE;
+    --secondaryt: #AAAAAA;
+    --thirdt: #6D6D6D;
+    --blue: #7734E7;
+}
+
+.constrain {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: end;
+}
+.panel{
+    width: 880px;
+    padding: 60px;
+}
+.panel-content{
+    /* background-color: red; */
+    padding-top: 50px;
+}
+.heading1{
+    font-size: 32px;
+    color: var(--primaryt);
+}.heading2{
+    font-size: 24px;
+    color: var(--primaryt);
+}.heading3{
+    font-size: 16px;
+    color: var(--secondaryt);
+}.heading4{
+    font-size: 13px;
+    color: var(--thirdt);
+}
+
+/* About me box */
+.img-hp{
+    height: 100px;
+    border: 1px solid #6F6161;
+    border-radius: 7px;
+}
