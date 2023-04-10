@@ -1,8 +1,19 @@
 *{
     margin: 0;
     padding: 0;
+    font-style: normal;
     box-sizing: border-box ;
-    font-family: 'Open-sans', sans-serif;
+    font-family: 'Open Sans' !important;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
 }
 p{
     margin: 0;
@@ -23,7 +34,7 @@ p{
 }
 .panel{
     width: 880px;
-    padding: 60px;
+    /* padding: 60px; */
 }
 .panel-content{
     /* background-color: red; */
@@ -41,6 +52,9 @@ p{
 }.heading4{
     font-size: 13px;
     color: var(--thirdt);
+}.section-title{
+    font-weight: 600;
+    letter-spacing: 0.03em;
 }
 
 /* About me box */
@@ -48,4 +62,22 @@ p{
     height: 100px;
     border: 1px solid #6F6161;
     border-radius: 7px;
+}
+.about-box{
+
+    background: #7734E7;
+    border-radius: 19px;
+    padding: 20px 44px;
+}
+.pointer{
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+
+    border-bottom: 5px solid black;
+}
+.about-box .heading3{
+    color: var(--primaryt) !important;
+    font-weight: 100 !important;
 }
