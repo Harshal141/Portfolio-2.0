@@ -35,7 +35,7 @@ p{
     justify-content: end;
 }
 .panel{
-    width: 880px;
+    width: 800px;
     /* padding: 60px; */
 }
 .panel-content{
@@ -179,7 +179,7 @@ color: #AAAAAA;
 
 /* // media quesry for size less than 1100px */
 @media screen and (max-width: 1100px){
-    .left_scroll{
+    .left_scroll,.socials_sidebar{
         display: none;
     }
 }
