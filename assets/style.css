@@ -113,6 +113,7 @@ letter-spacing: 0.02em;
     color: var(--primaryt) !important;
 }
 .line{
+    border-radius: 20px;
     width: 100%;
     height: .08px;
     margin-top: 15px;
@@ -122,6 +123,7 @@ letter-spacing: 0.02em;
 /* // project section */
 .projBox{
     border: 1px solid #AAAAAA;
+    border-radius: 2.5px;
 }
 .code-logo{
     width: 21.08px;
@@ -155,8 +157,23 @@ letter-spacing: 0.02em;
     flex-wrap: wrap;
 }
 .skill{
+    border-radius: 2.5px;
     padding: 8px 10px;
     border: 1px solid #6D6D6D;
+}
+.main_skill_box{
+    display: flex;
+    flex-direction: column;
+}
+.m_skill{
+    padding: 8px 10px;
+    border: 1px solid #6D6D6D;
+}.m_skill_down{
+    display: none;
+}
+.main_skill_box:hover .m_skill_down{
+    display: block;
+
 }
 
 .footer_text{

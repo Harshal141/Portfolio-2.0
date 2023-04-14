@@ -94,7 +94,7 @@ window.onload = function() {
 // images carousel
 const track = document.getElementById("image-track");
 track.addEventListener("mouseover",(e)=>{
-document.onmousemove = e => {
+track.onmousemove = e => {
     const x = (e.clientX / window.innerWidth)*100;
 
     track.animate({
