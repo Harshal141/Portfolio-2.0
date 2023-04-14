@@ -73,12 +73,23 @@ letter-spacing: 0.02em;
 }.projBox .heading4{
     font-size: 12px;
 }
+.heading1:hover,.heading2:hover{
+    transform: scale(1.01);
+    transition: .5s;
+}
 
 /* About me box */
 .img-hp{
     height: 100px;
     border: 1px solid #6F6161;
     border-radius: 7px;
+    transition: 1s;
+
+}
+/* // scale up on hover */
+.img-hp:hover{
+    transform: scale(1.1);
+    transition: .5s;
 }
 .about-box{
 
@@ -173,6 +184,7 @@ color: #AAAAAA;
     transform: scale(.28);
 }
 .panel_left{
+    cursor: pointer;
     height: 100vh;
     outline: 1px solid white;
 }
@@ -182,4 +194,29 @@ color: #AAAAAA;
     .left_scroll,.socials_sidebar{
         display: none;
     }
+}
+@media screen and (min-width: 1400px){
+    .panel_left{
+        outline: 2px solid white;
+    }
+}
+
+.testimonials{
+    overflow-x: hidden;
+}
+
+#image-track {
+    display: flex;
+    gap: 4vmin;
+    transform: translateX(-50%); 
+    user-select: none;
+}
+
+#image-track > .image {
+    width: 40vmin;
+    height: 56vmin;
+    border-radius: 1px;
+    object-fit: cover;
+    object-position: 100% center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
