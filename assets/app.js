@@ -1,15 +1,15 @@
-let draw = document.querySelector('.testimonials');
-draw.style.display = 'none';
-let draw_toggle = document.querySelector('.draw_toggle');
-draw_toggle.addEventListener('click', (e) => {
-    if (draw.style.display === 'none') {
-        draw.style.display = 'block';
-        draw_toggle.innerHTML = 'Hide Drawings 🖌️';
-    } else {
-        draw.style.display = 'none';
-        draw_toggle.innerHTML = 'Show Drawings 🖌️';
-    }
-})
+// let draw = document.querySelector('.testimonials');
+// draw.style.display = 'none';
+// let draw_toggle = document.querySelector('.draw_toggle');
+// draw_toggle.addEventListener('click', (e) => {
+//     if (draw.style.display === 'none') {
+//         draw.style.display = 'block';
+//         draw_toggle.innerHTML = 'Hide Drawings 🖌️';
+//     } else {
+//         draw.style.display = 'none';
+//         draw_toggle.innerHTML = 'Show Drawings 🖌️';
+//     }
+// })
 
 
 // const body = document.querySelector('body');
