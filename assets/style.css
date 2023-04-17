@@ -4,6 +4,8 @@
     font-style: normal;
     box-sizing: border-box ;
 }
+
+
 h1,h2,h3,h4{
   margin: 0;
 }
@@ -22,6 +24,10 @@ scrollbar-width: none;  /* Firefox */
 }
 p{
     margin: 0;
+}
+
+body,.left_constrain{
+  overflow-x: hidden;
 }
 
 :root{
@@ -103,6 +109,11 @@ letter-spacing: 0.02em;
     background: #7734E7;
     border-radius: 19px;
     padding: 20px 44px;
+}
+@media screen and (max-width: 768px) {
+    .about-box{
+        padding: 20px 20px;
+    }
 }
 .pointer{
     width: 0; 
@@ -382,9 +393,9 @@ color: #AAAAAA;
   .social-media-button {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     display: flex;
+    background-color: #121212;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
     border-radius: 50%;
     width: 50px;
     height: 50px;

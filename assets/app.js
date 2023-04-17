@@ -18,7 +18,6 @@ socialMediaButton.addEventListener("click", function() {
 });
 
 
-
 // const body = document.querySelector('body');
 let panel_left = document.querySelector('.left_scroll');
 let panel_content = document.querySelector('.panel_content_left');
