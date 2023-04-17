@@ -10,6 +10,13 @@
 //         draw_toggle.innerHTML = 'Show Drawings 🖌️';
 //     }
 // })
+const socialMediaPanel = document.querySelector(".social-media-panel");
+const socialMediaButton = document.querySelector(".social-media-button");
+
+socialMediaButton.addEventListener("click", function() {
+  socialMediaPanel.classList.toggle("open");
+});
+
 
 
 // const body = document.querySelector('body');
