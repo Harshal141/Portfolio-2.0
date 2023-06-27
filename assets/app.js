@@ -1,3 +1,18 @@
+document.onreadystatechange = function() {
+    if (document.readyState !== "complete") {
+        document.querySelector(
+          "body").style.visibility = "hidden";
+        document.querySelector(
+          "#spinner").style.visibility = "visible";
+    } else {
+        document.querySelector(
+          "#spinner").style.display = "none";
+        document.querySelector(
+          "body").style.visibility = "visible";
+    }
+};
+
+
 // let draw = document.querySelector('.testimonials');
 // draw.style.display = 'none';
 // let draw_toggle = document.querySelector('.draw_toggle');
