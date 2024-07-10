@@ -3,6 +3,7 @@
     padding: 0;
     font-style: normal;
     box-sizing: border-box ;
+    font-family: 'open sans';
 }
 
 
@@ -104,6 +105,14 @@ body,.left_constrain{
 .panel-content{
     /* background-color: red; */
     padding-top: 50px;
+}
+.hero-name{
+  color: #EEE;
+  letter-spacing: 0;
+font-size: 36px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
 }
 .heading1{
     font-style: normal;
