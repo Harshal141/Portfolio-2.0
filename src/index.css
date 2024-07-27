@@ -9,6 +9,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #121212;
+}
+.header{
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url('/src/img/bg.png');
+  background-position: center -140px; /* Center the image horizontally and fix to the top */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  
+  /* Ensure the image covers 50% of the viewport width */
+  background-size: 70vw auto; 
 }
 
 code {

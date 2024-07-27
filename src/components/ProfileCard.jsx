@@ -4,6 +4,7 @@ import ExperienceItem from './ExperienceItem';
 import ProjectCard from './ProjectCard';
 import AchievementItem from './AchievementItem';
 import EducationItem from './EducationItem';
+import { HeadingBullet } from './ui/HeadingBullet';
 
 const ProfileCard = () => {
   const socialIcons = [
@@ -81,7 +82,7 @@ const ProfileCard = () => {
   ];
 
   return (
-    <div className="flex justify-center items-center px-10 py-20 bg-neutral-900 max-md:px-5">
+    <div className="flex justify-center items-center px-10 py-20 max-md:px-5">
       <div className="mt-12 w-full max-w-[1247px] max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[29%] max-md:ml-0 max-md:w-full">
@@ -116,8 +117,8 @@ const ProfileCard = () => {
                 </div>
               </section>
               <section>
-                <h2 className="flex gap-2 self-start mt-16 text-base font-semibold tracking-wide whitespace-nowrap text-neutral-400 max-md:mt-10">
-                  <div className="shrink-0 my-auto w-3 h-3 bg-white rounded-full" />
+                <h2 className="flex items-center self-start mt-16 text-base font-semibold tracking-wide whitespace-nowrap text-neutral-400 max-md:mt-10 ml-[-10px]">
+                  <HeadingBullet/>
                   <div>EXPERIENCE</div>
                 </h2>
                 {experiences.map((exp, index) => (

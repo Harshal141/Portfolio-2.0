@@ -3,7 +3,8 @@ import ProfileCard from './components/ProfileCard';
 
 const App = () => {
   return (
-    <main className="bg-neutral-900 min-h-screen">
+    <main className="min-h-screen">
+      <div className='header'></div>
       <ProfileCard />
     </main>
   );
