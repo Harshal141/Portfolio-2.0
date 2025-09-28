@@ -71,6 +71,7 @@ var __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$g
 ;
 ;
 ;
+;
 const metadata = {
     title: "Harshal Patil | Portfolio",
     description: "Portfolio of Harshal Patil, software engineer and developer. Explore my projects, experience, and blog posts."
@@ -84,12 +85,12 @@ function RootLayout({ children }) {
             children: children
         }, void 0, false, {
             fileName: "[project]/src/app/layout.tsx",
-            lineNumber: 28,
+            lineNumber: 29,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/layout.tsx",
-        lineNumber: 27,
+        lineNumber: 28,
         columnNumber: 5
     }, this);
 }
