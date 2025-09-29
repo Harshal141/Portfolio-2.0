@@ -45,7 +45,7 @@ export default function MiniatureView() {
             <div className="mover"></div>
 
             <div className="d-flex flex-row">
-              <img src={profile.imageUrl} className="img-hp me-4" alt="miniature user profile" />
+              <img src="/legacy/assets/img/image.jpg" className="img-hp me-4" alt="miniature user profile" />
               <div className="user-detail">
                 <p className="heading2" style={{ fontWeight: 600 }}>{profile.name}</p>
                 <span className="heading3"><span className="wrap">{profile.taglineList[0]}</span></span>

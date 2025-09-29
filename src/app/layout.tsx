@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Open_Sans } from "next/font/google";
-import Script from "next/script";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "./legacy.css";
 
@@ -12,11 +11,6 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -32,13 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
-      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${openSans.className} antialiased h-full min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full min-h-screen`}
       >
-        <Script src="https://kit.fontawesome.com/ec7ea1a9d7.js" crossOrigin="anonymous" strategy="afterInteractive" />
         {children}
       </body>
     </html>

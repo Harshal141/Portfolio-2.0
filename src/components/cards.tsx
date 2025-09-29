@@ -24,8 +24,8 @@ type CardBaseProps = React.PropsWithChildren<{
 }>;
 
 export function CardBase({ className = "", disableAnimations, style, children }: CardBaseProps) {
-  const base = "projBox mt-3 p-3";
-  const anim = disableAnimations ? "no-animate" : "";
+  const base = "rounded-md border border-neutral-700/60 bg-neutral-900/40 shadow-lg backdrop-blur-sm p-3 md:p-4";
+  const anim = disableAnimations ? "no-animate" : "transition-transform duration-300 hover:scale-[1.01]";
   const cls = `${base} ${anim} ${className}`.trim();
   return (
     <div className={cls} style={style}>
@@ -54,34 +54,31 @@ export function ExperienceCard({
   disableAnimations?: boolean;
 }) {
   return (
-    <div className={disableAnimations ? "no-animate" : ""}>
-      <div className="heading1 mt-3 mb-1">{title}</div>
-      <div className="d-flex" style={{ justifyContent: "space-between" }}>
-        <div className="heading3">
-          <LinkLike
-            href={companyUrl}
-            disableLinks={disableLinks}
-            style={{
-              fontWeight: "bold",
-              letterSpacing: "normal",
-              color: "#ff2e63 !important"
-            }}
-          >
-            {company}
-          </LinkLike>
-          {location ? <span style={{ color: "#6d6d6d" }}> · {location}</span> : null}
+    <CardBase disableAnimations={disableAnimations}>
+      <div className="mt-1 mb-2 flex items-start justify-between gap-3">
+        <div>
+          <div className="text-neutral-100 font-semibold text-base md:text-lg leading-snug">{title}</div>
+          <div className="text-neutral-300/80 text-sm">
+            <LinkLike
+              href={companyUrl}
+              disableLinks={disableLinks}
+              className="font-semibold text-pink-400 hover:text-pink-300"
+            >
+              {company}
+            </LinkLike>
+            {location ? <span className="text-neutral-500"> · {location}</span> : null}
+          </div>
         </div>
-        <div className="heading3">{period}</div>
+        <div className="text-violet-300 text-xs md:text-sm whitespace-nowrap">{period}</div>
       </div>
       {bullets && bullets.length > 0 && (
-        <ul className="mt-2 heading3" style={{ listStyleType: "disc", paddingLeft: "20px" }}>
+        <ul className="mt-2 space-y-1 text-neutral-400 text-sm list-disc pl-5">
           {bullets.map((b, i) => (
             <li key={i}>{b}</li>
           ))}
         </ul>
       )}
-      <div className="line" />
-    </div>
+    </CardBase>
   );
 }
 
@@ -101,18 +98,18 @@ export function ProjectCard({
   disableAnimations?: boolean;
 }) {
   return (
-    <div className={`projBox mt-3 p-3 ${disableAnimations ? "no-animate" : ""}`}>
-      <div className="d-flex" style={{ justifyContent: "space-between" }}>
-        <div className="heading1">{title}</div>
+    <CardBase disableAnimations={disableAnimations}>
+      <div className="flex items-start justify-between gap-3">
+        <div className="text-neutral-100 font-semibold text-base md:text-lg leading-snug">{title}</div>
         {repoUrl ? (
-          <LinkLike href={repoUrl} disableLinks={disableLinks}>
+          <LinkLike href={repoUrl} disableLinks={disableLinks} className="shrink-0">
             <img src="/legacy/assets/img/Vector.png" className="code-logo" alt="code link" />
           </LinkLike>
         ) : null}
       </div>
-      <div className="heading4 mt-1">{tech}</div>
-      <div className="heading3 mt-2">{description}</div>
-    </div>
+      <div className="text-neutral-500 text-xs md:text-sm mt-1">{tech}</div>
+      <div className="text-neutral-300/80 text-sm mt-2">{description}</div>
+    </CardBase>
   );
 }
 
@@ -124,21 +121,20 @@ export function AchievementCard({ title, org, period, points, disableAnimations 
   disableAnimations?: boolean;
 }) {
   return (
-    <div className={disableAnimations ? "no-animate" : ""}>
-      <div className="heading1 mt-3 mb-1">{title}</div>
-      <div className="d-flex" style={{ justifyContent: "space-between" }}>
-        <div className="heading3" style={{ color: "#7734e7" }}>{org}</div>
-        <div className="heading3">{period}</div>
+    <CardBase disableAnimations={disableAnimations}>
+      <div className="flex items-start justify-between gap-3 mb-1">
+        <div className="text-neutral-100 font-semibold text-base md:text-lg leading-snug">{title}</div>
+        <div className="text-violet-300 text-xs md:text-sm whitespace-nowrap">{period}</div>
       </div>
+      <div className="text-violet-400 text-sm">{org}</div>
       {points && (
-        <ul className="mt-2 heading3" style={{ listStyleType: "disc", paddingLeft: "20px" }}>
+        <ul className="mt-2 space-y-1 text-neutral-400 text-sm list-disc pl-5">
           {points.map((p, i) => (
             <li key={i}>{p}</li>
           ))}
         </ul>
       )}
-      <div className="line" />
-    </div>
+    </CardBase>
   );
 }
 
