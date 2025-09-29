@@ -27,6 +27,21 @@ export type Education = {
   period: string;
 };
 
+export type Testimonial = {
+  name: string;
+  role: string;
+  company: string;
+  text: string;
+  imageUrl?: string;
+};
+
+export type Award = {
+  title: string;
+  issuer: string;
+  year: string;
+  description?: string;
+};
+
 export const profile = {
   name: "Harshal Patil",
   subtitle: "Engineer @ Keychain | MLH Top 50 | Ex-Frontend Intern @ Fyle",
@@ -44,6 +59,7 @@ export const profile = {
     instagram: "https://www.instagram.com/harshal_patil_141/",
     linkedin: "https://www.linkedin.com/in/harshalmukundapatil",
   },
+  imageUrl: "/Harshal_Patil_profile.png",
 };
 
 export const experiences: Experience[] = [
@@ -145,6 +161,36 @@ export const achievements: Achievement[] = [
 export const education: Education[] = [
   { degree: "Bachelor of Engineering", institute: "Army Institute Of Technology, Pune", period: "2021-2025" },
   { degree: "Higher Education", institute: "Army Public School Dighi.", period: "2020-2021" },
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    name: "John Doe",
+    role: "Engineering Manager",
+    company: "Fyle",
+    text: "Harshal consistently delivered high-quality code and showed great initiative in learning new technologies.",
+  },
+  {
+    name: "Jane Smith",
+    role: "Tech Lead",
+    company: "Keychain",
+    text: "An exceptional engineer with strong problem-solving skills and attention to detail.",
+  },
+];
+
+export const awards: Award[] = [
+  {
+    title: "Best Innovation Award",
+    issuer: "Hack4TKM",
+    year: "2024",
+    description: "Awarded for developing innovative soil moisture prediction system",
+  },
+  {
+    title: "Excellence in Engineering",
+    issuer: "Army Institute of Technology",
+    year: "2023",
+    description: "Recognized for outstanding academic performance and project work",
+  },
 ];
 
 

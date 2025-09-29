@@ -9,11 +9,7 @@ export default function LegacyContent() {
       <div className="panel p-md-5 p-2">
         <div className="panel-content container-fluid">
           <div className="d-flex flex-row">
-            <img
-              src="/legacy/assets/img/image.jpg"
-              className="img-hp me-4"
-              alt="Harshal Patil - user profile"
-            />
+          <img src={profile.imageUrl} className="img-hp me-4" alt="miniature user profile" />
             <div className="user-detail">
               <h1 style={{ display: "none" }}>{profile.name}</h1>
               <p className="hero-name" style={{ fontWeight: 600 }}>{profile.name}</p>
