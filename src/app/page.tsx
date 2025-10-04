@@ -1,10 +1,11 @@
+'use client';
 import PixelBlast from "@/components/LiquidEther";
 import LegacyContent from "@/components/ResumeView";
 import MiniatureView from "@/components/MiniatureView";
 
 export default function Home() {
   return (
-    <main className="min-h-screen" style={{ position: "relative" }}>
+    <main className="min-h-screen bg-[#121212]" style={{ position: "relative" }}>
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <PixelBlast
           variant="square"

@@ -53,11 +53,10 @@ body,
   color: #eee;
   /* letter-spacing: 0; */
   font-size: 36px;
-  /* font-weight: 700; */
   line-height: normal;
 }
 .heading1 {
-  font-weight: 600;
+  /* font-weight: 600; */
   font-size: 22px;
   line-height: 33px;
   letter-spacing: 0.02em;
@@ -80,8 +79,7 @@ body,
   letter-spacing: 0.03em;
 }
 .section-title {
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.05em;
 }
 .img-hp {
   box-shadow: rgba(17, 12, 46, 0.15) 0 48px 100px 0;

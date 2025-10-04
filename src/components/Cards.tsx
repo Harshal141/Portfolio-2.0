@@ -44,7 +44,7 @@ export function CardBase({
   children,
 }: CardBaseProps) {
   const base =
-    "rounded-md border border-neutral-700/60 bg-neutral-900/40 shadow-lg backdrop-blur-sm p-3 md:p-4 mb-3 mt-3";
+    "rounded-md border border-dotted border-neutral-700/60 shadow-lg backdrop-blur-[1px] p-3 md:p-4 mb-3 mt-3";
   const anim = disableAnimations
     ? "no-animate"
     : "transition-transform duration-300 hover:scale-[1.01]";
@@ -79,14 +79,14 @@ export function ExperienceCard({
     <CardBase disableAnimations={disableAnimations}>
       <div className="mt-1 mb-2 flex items-start justify-between gap-3">
         <div>
-          <div className="text-neutral-100 font-semibold text-base md:text-lg leading-snug">
+          <div className="text-neutral-100 text-base md:text-lg leading-snug">
             {title}
           </div>
           <div className="text-neutral-300/80 text-sm">
             <LinkLike
               href={companyUrl}
               disableLinks={disableLinks}
-              className="font-semibold text-pink-400 hover:text-pink-300"
+              className="text-pink-400 hover:text-pink-300"
             >
               {company}
             </LinkLike>
@@ -128,7 +128,7 @@ export function ProjectCard({
   return (
     <CardBase disableAnimations={disableAnimations}>
       <div className="flex items-start justify-between gap-3">
-        <div className="text-neutral-100 font-semibold text-base md:text-lg leading-snug">
+        <div className="text-neutral-100 text-base md:text-lg leading-snug">
           {title}
         </div>
         {repoUrl ? (
@@ -167,7 +167,7 @@ export function AchievementCard({
   return (
     <CardBase disableAnimations={disableAnimations}>
       <div className="flex items-start justify-between gap-3 mb-1">
-        <div className="text-neutral-100 font-semibold text-base md:text-lg leading-snug">
+        <div className="text-neutral-100 text-base md:text-lg leading-snug">
           {title}
         </div>
         <div className="text-violet-300 text-xs md:text-sm whitespace-nowrap">
@@ -204,8 +204,8 @@ export function ProfileCard(profile: Profile) {
           <p className="text-3xl font-normal text-neutral-100">
             {profile.name}
           </p>
-          <span className="text-sm text-neutral-400">
-            {profile.taglineList[0]}
+          <span className="text-sm text-neutral-400 my-1">
+            {profile.subtitle}
           </span>
           <h4 className="text-xs text-neutral-500">
             <TextType

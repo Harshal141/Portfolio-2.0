@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { profile, experiences, projects, achievements, education } from "@/lib/ResumeData";
 import { AchievementCard, ExperienceCard, ProfileCard, ProjectCard } from "./Cards";
+import Footer from "./Footer";
 
 export default function MiniatureView() {
   const panelLeftRef = useRef<HTMLDivElement | null>(null);
@@ -40,9 +41,10 @@ export default function MiniatureView() {
   return (
     <div className="left_scroll">
       <div className="constrain">
-        <div className="panel panel_left p-5" ref={panelLeftRef}>
+        <div className="panel panel_left p-10" ref={panelLeftRef}>
           <div className="panel-content panel_content_left container-fluid" ref={panelContentRef}>
-            <div className="mover"></div>
+            {/* #TODO: make match porper */}
+            <div className="mover"></div> 
 
             <ProfileCard {...profile} />
 
@@ -105,6 +107,7 @@ export default function MiniatureView() {
                 </React.Fragment>
               ))}
             </div>
+            <Footer/>
           </div>
         </div>
       </div>

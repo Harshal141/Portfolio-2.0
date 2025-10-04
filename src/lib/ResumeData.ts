@@ -33,7 +33,7 @@ export type Socials = {
   x: string;
   medium: string;
   instagram: string;
-}
+};
 
 export type Profile = {
   name: string;
@@ -41,22 +41,23 @@ export type Profile = {
   subtitle: string;
   taglineList: string[];
   summary: string;
-  socials: Socials
-}
+  socials: Socials;
+};
 
+// #TODO: update profile data
 export const profile = {
   name: "Harshal Patil",
   image: "Harshal_Patil_profile.png",
-  subtitle: "Engineer @ Keychain | MLH Top 50 | Ex-Frontend Intern @ Fyle",
+  subtitle: "Engineer @ Keychain",
   taglineList: [
-    "Engineer @ Keychain",
     "MLH Top 50 (2025)",
+    "Open Source Contributor",
     "Ex-Frontend Intern @ Fyle",
     "Hack4TKM 2024 Winner",
     "Runner-Up @ HackOdisha 3.0",
   ],
   summary:
-    "I’m Harshal Patil, an engineer passionate about building scalable, impactful products. At Keychain and Fyle, I’ve worked on backend systems, AWS integrations, and customer-facing features, while also driving automation and developer experience improvements. I thrive in fast-paced teams, adapt quickly across stacks (Angular, Node.js, Ionic, browser extensions), and enjoy turning ideas into production-ready products. Outside work, I write about my learnings and love collaborating on open-source and hackathon projects.",
+    "I’m Harshal Patil, an engineer passionate about building scalable, impactful products.",
   socials: {
     github: "https://github.com/Harshal141",
     instagram: "https://www.instagram.com/harshal_patil_141/",
@@ -65,6 +66,8 @@ export const profile = {
     medium: "https://medium.com/@harshalmukundapatil",
   },
 };
+
+export const personalEmail: string = "harshalmukundapatil@gmail.com"
 
 export const experiences: Experience[] = [
   {
