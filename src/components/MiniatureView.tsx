@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { profile, experiences, projects, achievements, education } from "@/lib/ResumeData";
-import { AchievementCard, ExperienceCard, ProjectCard } from "./Cards";
+import { AchievementCard, ExperienceCard, ProfileCard, ProjectCard } from "./Cards";
 
 export default function MiniatureView() {
   const panelLeftRef = useRef<HTMLDivElement | null>(null);
@@ -44,19 +44,7 @@ export default function MiniatureView() {
           <div className="panel-content panel_content_left container-fluid" ref={panelContentRef}>
             <div className="mover"></div>
 
-            <div className="d-flex flex-row">
-              <img src={profile.image} className="img-hp me-4" alt="miniature user profile" />
-              <div className="user-detail">
-                <p className="heading2" style={{ fontWeight: 600 }}>{profile.name}</p>
-                <span className="heading3"><span className="wrap">{profile.taglineList[0]}</span></span>
-                <p className="heading4">{profile.subtitle}</p>
-              </div>
-            </div>
-
-            <div className="pointer"></div>
-            <div className="about-box mt-3">
-              <p className="heading3">{profile.summary}</p>
-            </div>
+            <ProfileCard {...profile} />
 
             <div className="workExp mt-5">
               <p className="heading3 section-title">WORK EXPERIENCE</p>

@@ -56,13 +56,13 @@ export const profile = {
     "Runner-Up @ HackOdisha 3.0",
   ],
   summary:
-    "Hello! I'm Harshal Patil, a Tech Enthusiast and Backend Developer. I’ve worked across AWS, Angular, and Node.js, building customer-facing features and automation at Fyle and now engineering at Keychain. I thrive in fast-paced environments, adapt quickly across stacks (Ionic, browser extensions), and love turning ideas into production-ready products. I also write about my journey and learnings. Always open to collaborating on impactful projects.",
+    "I’m Harshal Patil, an engineer passionate about building scalable, impactful products. At Keychain and Fyle, I’ve worked on backend systems, AWS integrations, and customer-facing features, while also driving automation and developer experience improvements. I thrive in fast-paced teams, adapt quickly across stacks (Angular, Node.js, Ionic, browser extensions), and enjoy turning ideas into production-ready products. Outside work, I write about my learnings and love collaborating on open-source and hackathon projects.",
   socials: {
     github: "https://github.com/Harshal141",
     instagram: "https://www.instagram.com/harshal_patil_141/",
     linkedin: "https://www.linkedin.com/in/harshalmukundapatil",
     x: "https://x.com/Harshal41471486",
-    medium: "https://medium.com/@harshalmukundapatil"
+    medium: "https://medium.com/@harshalmukundapatil",
   },
 };
 
@@ -163,6 +163,14 @@ export const achievements: Achievement[] = [
 ];
 
 export const education: Education[] = [
-  { degree: "Bachelor of Engineering", institute: "Army Institute Of Technology, Pune", period: "2021-2025" },
-  { degree: "Higher Education", institute: "Army Public School Dighi.", period: "2020-2021" },
+  {
+    degree: "Bachelor of Engineering",
+    institute: "Army Institute Of Technology, Pune",
+    period: "2021-2025",
+  },
+  {
+    degree: "Higher Education",
+    institute: "Army Public School Dighi.",
+    period: "2020-2021",
+  },
 ];

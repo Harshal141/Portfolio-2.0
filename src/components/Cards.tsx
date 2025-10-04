@@ -1,6 +1,8 @@
 "use client";
 import { Profile } from "@/lib/ResumeData";
 import React from "react";
+import Image from "next/image";
+import TextType from "./TextType";
 
 type LinkLikeProps = React.PropsWithChildren<{
   href?: string;
@@ -42,7 +44,7 @@ export function CardBase({
   children,
 }: CardBaseProps) {
   const base =
-    "rounded-md border border-neutral-700/60 bg-neutral-900/40 shadow-lg backdrop-blur-sm p-3 md:p-4";
+    "rounded-md border border-neutral-700/60 bg-neutral-900/40 shadow-lg backdrop-blur-sm p-3 md:p-4 mb-3 mt-3";
   const anim = disableAnimations
     ? "no-animate"
     : "transition-transform duration-300 hover:scale-[1.01]";
@@ -186,29 +188,41 @@ export function AchievementCard({
 
 export function ProfileCard(profile: Profile) {
   return (
-    <>
-      <div className="d-flex flex-row">
-        <img
-          src={profile.image}
-          className="img-hp me-4"
-          alt="Harshal Patil - user profile"
+    <div className="flex flex-col gap-4">
+      {/* top section: photo left, text right */}
+      <div className="flex items-center gap-6">
+        <Image
+          src={`/${profile.image}`}
+          alt={`${profile.name} - user profile`}
+          width={100}
+          height={100}
+          className="h-24 w-24 rounded-md border border-neutral-500 shadow-md transition-transform hover:scale-110"
         />
-        <div className="user-detail">
-          <h1 style={{ display: "none" }}>{profile.name}</h1>
-          <p className="hero-name" style={{ fontWeight: 600 }}>
+
+        <div className="flex flex-col">
+          <h1 className="sr-only">{profile.name}</h1>
+          <p className="text-3xl font-normal text-neutral-100">
             {profile.name}
           </p>
-          <span className="heading3">
-            <span className="wrap">{profile.taglineList[0]}</span>
+          <span className="text-sm text-neutral-400">
+            {profile.taglineList[0]}
           </span>
-          <h4 className="heading4">{profile.subtitle}</h4>
+          <h4 className="text-xs text-neutral-500">
+            <TextType
+              text={profile.taglineList}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
+            />
+          </h4>
         </div>
       </div>
 
-      <div className="pointer" />
-      <div className="about-box mt-3">
-        <p className="heading3">{profile.summary}</p>
+      <div className="relative mt-2 rounded-xl bg-purple-700 p-6 shadow-xl">
+        <div className="absolute left-10 -top-2 h-0 w-0 border-x-8 border-b-10 border-x-transparent border-b-purple-700 rounded-b-md" />
+        <p className="text-sm text-neutral-100">{profile.summary}</p>
       </div>
-    </>
+    </div>
   );
 }
