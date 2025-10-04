@@ -12,6 +12,7 @@ import {
   ExperienceCard,
   ProfileCard,
   ProjectCard,
+  EducationCard
 } from "./Cards";
 import Footer from "./Footer";
 
@@ -65,22 +66,16 @@ export default function LegacyContent() {
           <div className="education mt-5">
             <h2 className="heading3 section-title">EDUCATION</h2>
             {education.map((e, i) => (
-              <React.Fragment key={`${e.degree}-${i}`}>
-                <div className="heading1 mt-3 mb-1">{e.degree}</div>
-                <div
-                  className="d-flex"
-                  style={{ justifyContent: "space-between" }}
-                >
-                  <div className="heading4">{e.institute}</div>
-                  <div className="heading4">{e.period}</div>
-                </div>
-                <div className="line" />
-              </React.Fragment>
+              <EducationCard
+                key={`${e.degree}-${i}`}
+                degree={e.degree}
+                institute={e.institute}
+                period={e.period}
+              />
             ))}
           </div>
 
-          <Footer/>
-
+          <Footer />
         </div>
       </div>
     </div>

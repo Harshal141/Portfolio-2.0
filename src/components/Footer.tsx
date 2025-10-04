@@ -9,7 +9,7 @@ export default function Footer() {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(personalEmail).then(() => {
       setCopied(true);
-      setTimeout(() => setCopied(false), 500); // revert after 1.5s
+      setTimeout(() => setCopied(false), 500);
     });
   };
 

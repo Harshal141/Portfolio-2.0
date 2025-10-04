@@ -1,7 +1,19 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import { profile, experiences, projects, achievements, education } from "@/lib/ResumeData";
-import { AchievementCard, ExperienceCard, ProfileCard, ProjectCard } from "./Cards";
+import {
+  profile,
+  experiences,
+  projects,
+  achievements,
+  education,
+} from "@/lib/ResumeData";
+import {
+  AchievementCard,
+  ExperienceCard,
+  ProfileCard,
+  ProjectCard,
+  EducationCard
+} from "./Cards";
 import Footer from "./Footer";
 
 export default function MiniatureView() {
@@ -17,7 +29,7 @@ export default function MiniatureView() {
       panelLeft.style.marginTop = `${window.scrollY / 10}px`;
       panelContent.style.marginTop = `-${window.scrollY}px`;
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     const onClick = (e: MouseEvent) => {
       const screenHeight = window.screen.height;
@@ -25,16 +37,20 @@ export default function MiniatureView() {
         document.body.getBoundingClientRect().height,
         document.documentElement.getBoundingClientRect().height
       );
-      if (e.clientY < screenHeight * 0.33) window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (e.clientY < screenHeight * 0.33)
+        window.scrollTo({ top: 0, behavior: "smooth" });
       else if (e.clientY < screenHeight * 0.66)
-        window.scrollTo({ top: height / 2 - screenHeight / 2, behavior: 'smooth' });
-      else window.scrollTo({ top: height, behavior: 'smooth' });
+        window.scrollTo({
+          top: height / 2 - screenHeight / 2,
+          behavior: "smooth",
+        });
+      else window.scrollTo({ top: height, behavior: "smooth" });
     };
-    panelContent.addEventListener('click', onClick);
+    panelContent.addEventListener("click", onClick);
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      panelContent.removeEventListener('click', onClick);
+      window.removeEventListener("scroll", onScroll);
+      panelContent.removeEventListener("click", onClick);
     };
   }, []);
 
@@ -42,9 +58,12 @@ export default function MiniatureView() {
     <div className="left_scroll">
       <div className="constrain">
         <div className="panel panel_left p-10" ref={panelLeftRef}>
-          <div className="panel-content panel_content_left container-fluid" ref={panelContentRef}>
+          <div
+            className="panel-content panel_content_left container-fluid"
+            ref={panelContentRef}
+          >
             {/* #TODO: make match porper */}
-            <div className="mover"></div> 
+            <div className="mover"></div>
 
             <ProfileCard {...profile} />
 
@@ -95,24 +114,21 @@ export default function MiniatureView() {
             </div>
 
             <div className="education mt-5">
-              <p className="heading3 section-title">EDUCATION</p>
+              <h2 className="heading3 section-title">EDUCATION</h2>
               {education.map((e, i) => (
-                <React.Fragment key={`${e.degree}-${i}`}>
-                  <div className="heading1 mt-3 mb-1">{e.degree}</div>
-                  <div className="d-flex" style={{ justifyContent: 'space-between' }}>
-                    <div className="heading4">{e.institute}</div>
-                    <div className="heading4">{e.period}</div>
-                  </div>
-                  <div className="line"></div>
-                </React.Fragment>
+                <EducationCard
+                  key={`${e.degree}-${i}`}
+                  degree={e.degree}
+                  institute={e.institute}
+                  period={e.period}
+                />
               ))}
             </div>
-            <Footer/>
+
+            <Footer />
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-

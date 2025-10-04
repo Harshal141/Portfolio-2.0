@@ -77,12 +77,12 @@ export function ExperienceCard({
 }) {
   return (
     <CardBase disableAnimations={disableAnimations}>
-      <div className="mt-1 mb-2 flex items-start justify-between gap-3">
+      <div className="my-1 flex items-start justify-between gap-3">
         <div>
           <div className="text-neutral-100 text-base md:text-lg leading-snug">
             {title}
           </div>
-          <div className="text-neutral-300/80 text-sm">
+          <div className="text-neutral-300/80 text-xs my-1">
             <LinkLike
               href={companyUrl}
               disableLinks={disableLinks}
@@ -95,12 +95,12 @@ export function ExperienceCard({
             ) : null}
           </div>
         </div>
-        <div className="text-violet-300 text-xs md:text-sm whitespace-nowrap">
+        <div className="text-violet-300 text-[0.7rem] tracking-wide">
           {period}
         </div>
       </div>
       {bullets && bullets.length > 0 && (
-        <ul className="mt-2 space-y-1 text-neutral-400 text-sm list-disc pl-5">
+        <ul className=" space-y-1 text-neutral-400 text-sm list-disc pl-5">
           {bullets.map((b, i) => (
             <li key={i}>{b}</li>
           ))}
@@ -110,6 +110,7 @@ export function ExperienceCard({
   );
 }
 
+// #TODO: update to a logo based card
 export function ProjectCard({
   title,
   tech,
@@ -170,11 +171,11 @@ export function AchievementCard({
         <div className="text-neutral-100 text-base md:text-lg leading-snug">
           {title}
         </div>
-        <div className="text-violet-300 text-xs md:text-sm whitespace-nowrap">
+        <div className="text-violet-300 text-[0.7rem] tracking-wide">
           {period}
         </div>
       </div>
-      <div className="text-violet-400 text-sm">{org}</div>
+      <div className="text-violet-400 text-xs">{org}</div>
       {points && (
         <ul className="mt-2 space-y-1 text-neutral-400 text-sm list-disc pl-5">
           {points.map((p, i) => (
@@ -226,3 +227,41 @@ export function ProfileCard(profile: Profile) {
     </div>
   );
 }
+
+export function EducationCard({
+  degree,
+  institute,
+  period,
+  disableLinks,
+  disableAnimations,
+}: {
+  degree: string;
+  institute: string;
+  period: string;
+  disableLinks?: boolean;
+  disableAnimations?: boolean;
+}) {
+  return (
+    <CardBase disableAnimations={disableAnimations}>
+      <div className="mt-1 mb-2 flex items-start justify-between gap-3">
+        <div>
+          <div className="text-neutral-100 text-base md:text-lg leading-snug">
+            {degree}
+          </div>
+          <div className="text-neutral-300/80 text-xs">
+            <LinkLike
+              disableLinks={disableLinks}
+              className="text-pink-400 hover:text-pink-300"
+            >
+              {institute}
+            </LinkLike>
+          </div>
+        </div>
+        <div className="text-violet-300 text-[0.7rem] tracking-wide">
+          {period}
+        </div>
+      </div>
+    </CardBase>
+  );
+}
+
