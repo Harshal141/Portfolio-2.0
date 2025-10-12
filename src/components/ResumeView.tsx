@@ -12,7 +12,8 @@ import {
   ExperienceCard,
   ProfileCard,
   ProjectCard,
-  EducationCard
+  EducationCard,
+  ProjectCardV2,
 } from "./Cards";
 import Footer from "./Footer";
 
@@ -39,15 +40,18 @@ export default function LegacyContent() {
 
           <div className="projects mt-5">
             <h2 className="heading3 section-title">PROJECTS</h2>
-            {projects.map((p) => (
-              <ProjectCard
-                key={p.title}
-                title={p.title}
-                tech={p.tech}
-                description={p.description}
-                repoUrl={p.repoUrl}
-              />
-            ))}
+            <div className="flex flex-wrap justify-between">
+              {projects.map((p) => (
+                <ProjectCardV2
+                  key={p.title}
+                  title={p.title}
+                  tech={p.tech}
+                  description={p.description}
+                  repoUrl={p.repoUrl}
+                  img={p.img}
+                />
+              ))}
+            </div>
           </div>
 
           <div className="achieve mt-5">

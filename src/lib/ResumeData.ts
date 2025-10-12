@@ -9,9 +9,10 @@ export type Experience = {
 
 export type Project = {
   title: string;
-  tech: string;
+  tech: string[];
   description: string;
   repoUrl?: string;
+  img?: string;
 };
 
 export type Achievement = {
@@ -47,7 +48,7 @@ export type Profile = {
 // #TODO: update profile data
 export const profile = {
   name: "Harshal Patil",
-  image: "Harshal_Patil_profile.png",
+  image: "Harshal_Patil_profile.jpeg",
   subtitle: "Engineer @ Keychain",
   taglineList: [
     "MLH Top 50 (2025)",
@@ -67,7 +68,7 @@ export const profile = {
   },
 };
 
-export const personalEmail: string = "harshalmukundapatil@gmail.com"
+export const personalEmail: string = "harshalmukundapatil@gmail.com";
 
 export const experiences: Experience[] = [
   {
@@ -119,24 +120,27 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     title: "i-Moisture",
-    tech: "React Flask AWS",
+    tech: ["React", "Flask", "AWS"],
     description:
       "Soil moisture prediction via multiple linear regression; gamified irrigation approach.",
     repoUrl: "https://github.com/Harshal141/iMoisture",
+    img: "/project/anubhav.png",
   },
   {
     title: "Water Monitoring System",
-    tech: "NodeJS, Maptiler, ChartJS, R Language",
+    tech: ["NodeJS", "Maptiler", "ChartJS", "R Language"],
     description:
       "Low-cost IoT system for real-time water quality monitoring with Wi‑Fi data access.",
     repoUrl: "https://github.com/Harshal141/Water-Management-System",
+    img: "/project/anubhav.png",
   },
   {
     title: "NFC based Pass Issuer",
-    tech: "Flutter, Firebase, RazorPay, nfc-manager",
+    tech: ["Flutter", "Firebase", "RazorPay", "nfc-manager"],
     description:
       "NFC bus pass system for Indian metropolitan transit; sustainable and efficient.",
     repoUrl: "https://github.com/March-Madnes/PuneConnect",
+    img: "/project/anubhav.png",
   },
 ];
 
