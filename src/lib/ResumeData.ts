@@ -119,6 +119,14 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    title: "Anubhav",
+    tech: ["React.js", "Node.js", "Tailwind CSS", "Project Management"],
+    description:
+      "Anubhav is an interview-sharing platform for students of AIT.",
+    repoUrl: "https://anubhav.aitoss.club/",
+    img: "/project/anubhav.png",
+  },
+  {
     title: "i-Moisture",
     tech: ["React", "Flask", "AWS"],
     description:
