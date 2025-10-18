@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="border-t border-dashed border-[#2e2e2e] mb-2"></div>
       <div className="flex flex-row justify-between items-center">
         <div className="text-xs text-gray-500">
-          ALL RIGHTS RESERVES <span style={{ color: "#2e2e2e" }}>MAYBE</span>{" "}
+          ALL RIGHTS RESERVED <span style={{ color: "#2e2e2e" }}>MAYBE</span>{" "}
         </div>
         <div className="flex items-center gap-1 text-xs text-gray-500">
           <button

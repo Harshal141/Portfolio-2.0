@@ -11,7 +11,6 @@ import {
   AchievementCard,
   ExperienceCard,
   ProfileCard,
-  ProjectCard,
   EducationCard,
   ProjectCardV2,
 } from "./Cards";

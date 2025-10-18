@@ -1,4 +1,5 @@
 "use client";
+
 import { Profile } from "@/lib/ResumeData";
 import React from "react";
 import Image from "next/image";
@@ -12,7 +13,7 @@ export function ProfileCard(profile: Profile) {
       {/* top section: photo left, text right */}
       <div className="flex items-center gap-6">
         <Image
-          src={`/${profile.image}`}
+          src={`${profile.image}`}
           alt={`${profile.name} - user profile`}
           width={100}
           height={100}
@@ -39,8 +40,8 @@ export function ProfileCard(profile: Profile) {
         </div>
       </div>
 
-      <div className="relative mt-2 rounded-xl bg-purple-700 p-6 shadow-xl">
-        <div className="absolute left-10 -top-2 h-0 w-0 border-x-8 border-b-10 border-x-transparent border-b-purple-700 rounded-b-md" />
+      <div className="relative mt-2 rounded-xl bg-purple-500 p-6 shadow-xl">
+        <div className="absolute left-10 -top-2 h-0 w-0 border-x-8 border-b-10 border-x-transparent border-b-purple-500 rounded-b-md" />
         <p className="text-sm text-neutral-100">{profile.summary}</p>
       </div>
     </div>
@@ -77,7 +78,7 @@ export function ExperienceCard({
             <LinkLike
               href={companyUrl}
               disableLinks={disableLinks}
-              className="text-pink-400 hover:text-pink-300"
+              className="text-violet-300 hover:text-purple-500"
             >
               {company}
             </LinkLike>
@@ -107,91 +108,63 @@ export function ProjectCardV2({
   description,
   repoUrl,
   img,
+  disableAnimations,
+  disableLinks,
 }: {
   title: string;
   tech: string[];
   description: string;
   repoUrl?: string;
   img?: string;
+  disableAnimations?: boolean;
+  disableLinks?: boolean;
 }) {
+  const anim = disableAnimations
+    ? "no-animate"
+    : "transition-transform duration-300 hover:scale-[1.01]";
   return (
-    <div className="w-full md:w-[49%] lg:w-[49%] rounded-md border border-dotted border-neutral-700/60 shadow-lg backdrop-blur-[1px] p-2 mt-3">
-      <div className="w-full h-[220px] overflow-hidden rounded-xl border border-dotted border-neutral-700/60">
-        <img
-          src={img || "/project/anubhav.png"}
-          alt={title}
-          className="w-full h-full object-cover object-bottom"
-        />
+    <div
+      className={`w-full md:w-[49%] lg:w-[49%] rounded-md border border-dashed border-neutral-700/60 shadow-lg backdrop-blur-[1px] p-2 mt-3 ${anim}`}
+    >
+      <div className="w-full h-[220px] overflow-hidden rounded-xl border border-dashed border-neutral-700/60">
+        <LinkLike href={repoUrl} disableLinks={disableLinks}>
+          <img
+            src={img || "/project/anubhav.png"}
+            alt={title}
+            className="w-full h-full object-cover object-bottom"
+          />
+        </LinkLike>
       </div>
       <div className="m-3">
         <div className="flex items-center justify-between">
-          <h3 className="text-neutral-100 text-base md:text-lg leading-snug">{title}</h3>
+          <h3 className="text-neutral-100 text-base md:text-lg leading-snug">
+            {title}
+          </h3>
           {repoUrl && (
-            <a
+            <LinkLike
               href={repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-500"
+              disableLinks={disableLinks}
+              className="text-violet-300 hover:text-purple-500"
             >
-              <FiLink size={14} />
-            </a>
+              <FiLink size={15} />
+            </LinkLike>
           )}
         </div>
         <div className="flex flex-wrap gap-2 my-2">
           {tech.map((t) => (
             <span
               key={t}
-              className="bg-neutral-700/20 text-neutral-100 text-xs px-2 py-1 rounded-full"
+              className="bg-neutral-700/20 text-neutral-400 text-xs px-2 py-1 rounded-full"
             >
               {t}
             </span>
           ))}
         </div>
-        <p className="space-y-1 text-neutral-400 text-sm list-disc">{description}</p>
+        <p className="space-y-1 text-neutral-400 text-sm list-disc">
+          {description}
+        </p>
       </div>
     </div>
-  );
-}
-
-// #TODO: update to a logo based card
-export function ProjectCard({
-  title,
-  tech,
-  description,
-  repoUrl,
-  disableLinks,
-  disableAnimations,
-}: {
-  title: string;
-  tech: string;
-  description: string;
-  repoUrl?: string;
-  disableLinks?: boolean;
-  disableAnimations?: boolean;
-}) {
-  return (
-    <CardBase disableAnimations={disableAnimations}>
-      <div className="flex items-start justify-between gap-3">
-        <div className="text-neutral-100 text-base md:text-lg leading-snug">
-          {title}
-        </div>
-        {repoUrl ? (
-          <LinkLike
-            href={repoUrl}
-            disableLinks={disableLinks}
-            className="shrink-0"
-          >
-            <img
-              src="/legacy/assets/img/Vector.png"
-              className="code-logo"
-              alt="code link"
-            />
-          </LinkLike>
-        ) : null}
-      </div>
-      <div className="text-neutral-500 text-xs md:text-sm mt-1">{tech}</div>
-      <div className="text-neutral-300/80 text-sm mt-2">{description}</div>
-    </CardBase>
   );
 }
 
@@ -218,7 +191,7 @@ export function AchievementCard({
           {period}
         </div>
       </div>
-      <div className="text-violet-400 text-xs">{org}</div>
+      <div className="text-violet-300 text-xs">{org}</div>
       {points && (
         <ul className="mt-2 space-y-1 text-neutral-400 text-sm list-disc pl-5">
           {points.map((p, i) => (
@@ -251,10 +224,7 @@ export function EducationCard({
             {degree}
           </div>
           <div className="text-neutral-300/80 text-xs">
-            <LinkLike
-              disableLinks={disableLinks}
-              className="text-pink-400 hover:text-pink-300"
-            >
+            <LinkLike disableLinks={disableLinks} className="text-violet-300">
               {institute}
             </LinkLike>
           </div>

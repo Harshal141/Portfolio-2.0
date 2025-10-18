@@ -45,10 +45,9 @@ export type Profile = {
   socials: Socials;
 };
 
-// #TODO: update profile data
 export const profile = {
   name: "Harshal Patil",
-  image: "Harshal_Patil_profile.jpeg",
+  image: "/me/Harshal_Patil_profile.png",
   subtitle: "Engineer @ Keychain",
   taglineList: [
     "MLH Top 50 (2025)",
@@ -76,22 +75,15 @@ export const experiences: Experience[] = [
     company: "Keychain",
     companyUrl: "https://keychain.com",
     location: "Gurugram (On-site)",
-    period: "Jun 2025 - Present",
+    period: "Dec 2024 - Present",
     bullets: [
       "Contributing to core product features and platform reliability.",
       "Implementing backend services and integrations; improving DX and delivery speed.",
     ],
   },
   {
-    title: "Engineering Intern",
-    company: "Keychain",
-    companyUrl: "https://keychain.com",
-    period: "Dec 2024 - Jun 2025 · Remote",
-    bullets: ["Backend services, internal tooling, and feature development."],
-  },
-  {
     title: "Frontend Intern",
-    company: "Fyle",
+    company: "Fyle (Sage)",
     companyUrl: "https://www.fylehq.com/",
     period: "Jul 2023 - Mar 2024 · Remote",
     bullets: [
@@ -101,8 +93,8 @@ export const experiences: Experience[] = [
   },
   {
     title: "Technical Lead",
-    company: "AIT Open Source Software Club",
-    companyUrl: "https://github.com/aitoss",
+    company: "AIT OSS Club",
+    companyUrl: "https://aitoss.club/",
     period: "Jun 2023 - Feb 2024",
     bullets: ["Led OSS initiatives, organized INNERVE, mentored peers."],
   },
@@ -132,7 +124,7 @@ export const projects: Project[] = [
     description:
       "Soil moisture prediction via multiple linear regression; gamified irrigation approach.",
     repoUrl: "https://github.com/Harshal141/iMoisture",
-    img: "/project/anubhav.png",
+    img: "/project/i-moist.png",
   },
   {
     title: "Water Monitoring System",
@@ -140,7 +132,7 @@ export const projects: Project[] = [
     description:
       "Low-cost IoT system for real-time water quality monitoring with Wi‑Fi data access.",
     repoUrl: "https://github.com/Harshal141/Water-Management-System",
-    img: "/project/anubhav.png",
+    img: "/project/water-man.png",
   },
   {
     title: "NFC based Pass Issuer",
@@ -148,7 +140,7 @@ export const projects: Project[] = [
     description:
       "NFC bus pass system for Indian metropolitan transit; sustainable and efficient.",
     repoUrl: "https://github.com/March-Madnes/PuneConnect",
-    img: "/project/anubhav.png",
+    img: "/project/nfc-pass.png",
   },
 ];
 

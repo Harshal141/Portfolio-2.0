@@ -22,7 +22,7 @@ export function LinkLike({
       </span>
     );
   return (
-    <a href={href} className={className} style={style}>
+    <a href={href} target="_blank" className={className} style={style}>
       {children}
     </a>
   );
@@ -41,7 +41,7 @@ export function CardBase({
   children,
 }: CardBaseProps) {
   const base =
-    "rounded-md border border-dotted border-neutral-700/60 shadow-lg backdrop-blur-[1px] p-3 md:p-4 my-3";
+    "rounded-md border border-dashed border-neutral-700/60 shadow-lg backdrop-blur-[1px] p-3 md:p-4 my-3";
   const anim = disableAnimations
     ? "no-animate"
     : "transition-transform duration-300 hover:scale-[1.01]";

@@ -11,7 +11,6 @@ import {
   AchievementCard,
   ExperienceCard,
   ProfileCard,
-  ProjectCard,
   EducationCard,
   ProjectCardV2,
 } from "./Cards";
@@ -96,6 +95,7 @@ export default function MiniatureView() {
                     description={p.description}
                     repoUrl={p.repoUrl}
                     img={p.img}
+                    disableAnimations
                   />
                 ))}
               </div>
