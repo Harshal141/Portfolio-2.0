@@ -15,6 +15,7 @@ import {
   ProjectCardV2,
 } from "./Cards";
 import Footer from "./Footer";
+import { Socials } from "./baseComponents/Socials";
 
 export default function LegacyContent() {
   return (
@@ -22,6 +23,7 @@ export default function LegacyContent() {
       <div className="panel p-md-10 p-2">
         <div className="panel-content container-fluid">
           <ProfileCard {...profile} />
+
           <div className="workExp mt-5">
             <p className="heading3 section-title">WORK EXPERIENCE</p>
             {experiences.map((e) => (
@@ -77,7 +79,7 @@ export default function LegacyContent() {
               />
             ))}
           </div>
-
+          <Socials />
           <Footer />
         </div>
       </div>

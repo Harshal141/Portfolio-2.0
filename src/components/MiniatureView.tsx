@@ -15,6 +15,7 @@ import {
   ProjectCardV2,
 } from "./Cards";
 import Footer from "./Footer";
+import { Socials } from "./baseComponents/Socials";
 
 export default function MiniatureView() {
   const panelLeftRef = useRef<HTMLDivElement | null>(null);
@@ -126,7 +127,7 @@ export default function MiniatureView() {
                 />
               ))}
             </div>
-
+            <Socials />
             <Footer />
           </div>
         </div>

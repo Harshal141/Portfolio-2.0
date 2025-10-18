@@ -13,13 +13,13 @@ export function ProfileCard(profile: Profile) {
       {/* top section: photo left, text right */}
       <div className="flex items-center gap-6">
         <Image
-          src={`${profile.image}`}
+          src={profile.image}
           alt={`${profile.name} - user profile`}
           width={100}
           height={100}
-          className="h-24 w-24 rounded-md border border-neutral-500 shadow-md transition-transform hover:scale-110 object-cover"
+          className="aspect-square h-24 w-24 rounded-md border border-neutral-500 shadow-md transition-transform hover:scale-110 object-cover"
+          style={{ objectPosition: "center" }}
         />
-
         <div className="flex flex-col">
           <h1 className="sr-only">{profile.name}</h1>
           <p className="text-3xl font-normal text-neutral-100">
@@ -40,7 +40,7 @@ export function ProfileCard(profile: Profile) {
         </div>
       </div>
 
-      <div className="relative mt-2 rounded-xl bg-purple-500 p-6 shadow-xl">
+      <div className="relative mt-2 rounded-xl bg-purple-500 p-6 shadow-xl ">
         <div className="absolute left-10 -top-2 h-0 w-0 border-x-8 border-b-10 border-x-transparent border-b-purple-500 rounded-b-md" />
         <p className="text-sm text-neutral-100">{profile.summary}</p>
       </div>
@@ -121,7 +121,7 @@ export function ProjectCardV2({
 }) {
   const anim = disableAnimations
     ? "no-animate"
-    : "transition-transform duration-300 hover:scale-[1.01]";
+    : "transition-transform duration-300 hover:scale-[1.01] hover:border-purple-400";
   return (
     <div
       className={`w-full md:w-[49%] lg:w-[49%] rounded-md border border-dashed border-neutral-700/60 shadow-lg backdrop-blur-[1px] p-2 mt-3 ${anim}`}

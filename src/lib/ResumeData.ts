@@ -1,3 +1,18 @@
+import {
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaXTwitter,
+  FaMedium,
+} from "react-icons/fa6";
+
+export type SocialItem = {
+  href: string;
+  icon: any;
+  username: string;
+  subtext?: string;
+};
+
 export type Experience = {
   title: string;
   company: string;
@@ -47,7 +62,7 @@ export type Profile = {
 
 export const profile = {
   name: "Harshal Patil",
-  image: "/me/Harshal_Patil_profile.png",
+  image: "/me/hero_harshal_patil.jpeg",
   subtitle: "Engineer @ Keychain",
   taglineList: [
     "MLH Top 50 (2025)",
@@ -66,6 +81,39 @@ export const profile = {
     medium: "https://medium.com/@harshalmukundapatil",
   },
 };
+
+export const socials: SocialItem[] = [
+  {
+    href: "https://github.com/Harshal141",
+    icon: FaGithub,
+    username: "@Harshal141",
+    subtext: "GitHub Profile",
+  },
+  {
+    href: "https://www.instagram.com/harshal_patil_141/",
+    icon: FaInstagram,
+    username: "@harshal_patil_141",
+    subtext: "Instagram",
+  },
+  {
+    href: "https://x.com/Harshal41471486",
+    icon: FaXTwitter,
+    username: "@Harshal41471486",
+    subtext: "Twitter / X",
+  },
+  {
+    href: "https://www.linkedin.com/in/harshalmukundapatil",
+    icon: FaLinkedin,
+    username: "Harshal Patil",
+    subtext: "LinkedIn",
+  },
+  {
+    href: "https://medium.com/@harshalmukundapatil",
+    icon: FaMedium,
+    username: "@harshalmukundapatil",
+    subtext: "Medium Articles",
+  },
+];
 
 export const personalEmail: string = "harshalmukundapatil@gmail.com";
 

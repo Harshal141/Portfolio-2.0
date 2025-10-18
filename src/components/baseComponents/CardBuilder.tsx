@@ -1,32 +1,28 @@
 "use client";
 
-
-type LinkLikeProps = React.PropsWithChildren<{
-  href?: string;
-  disableLinks?: boolean;
-  className?: string;
-  style?: React.CSSProperties;
-}>;
+type LinkLikeProps = React.PropsWithChildren<
+  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    href?: string;
+    disableLinks?: boolean;
+  }
+>;
 
 export function LinkLike({
   href,
   disableLinks,
-  className,
-  style,
   children,
+  ...rest
 }: LinkLikeProps) {
-  if (!href || disableLinks)
-    return (
-      <span className={className} style={style}>
-        {children}
-      </span>
-    );
+  if (!href || disableLinks) {
+    return <span {...rest}>{children}</span>;
+  }
   return (
-    <a href={href} target="_blank" className={className} style={style}>
+    <a href={href} {...rest} target="_blank" rel="noopener noreferrer">
       {children}
     </a>
   );
 }
+
 
 type CardBaseProps = React.PropsWithChildren<{
   className?: string;
@@ -44,7 +40,7 @@ export function CardBase({
     "rounded-md border border-dashed border-neutral-700/60 shadow-lg backdrop-blur-[1px] p-3 md:p-4 my-3";
   const anim = disableAnimations
     ? "no-animate"
-    : "transition-transform duration-300 hover:scale-[1.01]";
+    : "transition-transform duration-300 hover:scale-[1.01] hover:border-purple-400";
   const cls = `${base} ${anim} ${className}`.trim();
   return (
     <div className={cls} style={style}>
