@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "gsap": "^3.13.0",
+    "lucide-react": "^0.552.0",
     "motion": "^12.23.22",
     "next": "15.5.4",
     "postprocessing": "^6.37.8",

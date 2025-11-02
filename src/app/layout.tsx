@@ -18,14 +18,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/assets/fav/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/assets/fav/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/fav/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/fav/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/fav/favicon.ico", type: "image/x-icon" },
     ],
-    apple: "/assets/fav/apple-touch-icon.png",
-    other: [
-      { rel: "mask-icon", url: "/assets/fav/safari-pinned-tab.svg", color: "#5bbad5" },
-      { rel: "manifest", url: "/assets/fav/site.webmanifest" },
-    ],
+    apple: "/fav/apple-touch-icon.png",
+    other: [{ rel: "manifest", url: "/fav/site.webmanifest" }],
   },
   themeColor: "#ffffff",
   openGraph: {

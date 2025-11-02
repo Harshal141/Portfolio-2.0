@@ -125,8 +125,9 @@ export const experiences: Experience[] = [
     location: "Gurugram (On-site)",
     period: "Dec 2024 - Present",
     bullets: [
-      "Contributing to core product features and platform reliability.",
-      "Implementing backend services and integrations; improving DX and delivery speed.",
+      "Designed and implemented a scalable news feed architecture from low-level design to production deployment using Prefect for orchestration. The system processes over 100K+ news articles weekly, achieving 80%+ entity coverage across brands and manufacturers.",
+      "Built a multi-service AI verification system for automating new user approval workflows — integrating Python-based AI models, a Java backend, and a TypeScript scraper. Improved approval rates from 25% to 40%.",
+      "Developed Prefect pipelines to enrich and verify user data through public certification sources such as Organic, FSC, and FDA Recall databases, ensuring data integrity and compliance.",
     ],
   },
   {
@@ -135,8 +136,8 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.fylehq.com/",
     period: "Jul 2023 - Mar 2024 · Remote",
     bullets: [
-      "AngularJS → Angular migration; user-facing features.",
-      "AWS Lambda automations integrating ClickUp and Slack APIs.",
+      "Worked closely with the CTO to develop AWS Lambda automation plus integrating services like enforcing code quality standards with ESLint, reducing manual efforts, and improving code maintainability",
+      "Engineered AWS Lambda functions for automation in ClickUp and integrated APIs to enhance team productivity by 50%.",
     ],
   },
   {

@@ -23,7 +23,6 @@ export function LinkLike({
   );
 }
 
-
 type CardBaseProps = React.PropsWithChildren<{
   className?: string;
   disableAnimations?: boolean;

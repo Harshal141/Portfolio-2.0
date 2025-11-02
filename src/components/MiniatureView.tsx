@@ -124,6 +124,7 @@ export default function MiniatureView() {
                   degree={e.degree}
                   institute={e.institute}
                   period={e.period}
+                  disableAnimations
                 />
               ))}
             </div>
