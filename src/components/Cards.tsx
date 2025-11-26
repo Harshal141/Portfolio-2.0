@@ -308,3 +308,53 @@ export function EducationCard({
     </CardBase>
   );
 }
+
+export function BlogCard({
+  title,
+  link,
+  image,
+  disableAnimations,
+  disableLinks,
+}: {
+  title: string;
+  link: string;
+  image: string;
+  disableAnimations?: boolean;
+  disableLinks?: boolean;
+}) {
+  const anim = disableAnimations
+    ? "no-animate"
+    : "transition-transform duration-300 hover:scale-[1.01] hover:border-purple-400";
+  return (
+    <div
+      className={`w-full md:w-[49%] lg:w-[49%] rounded-md border border-dashed border-neutral-700/60 shadow-lg backdrop-blur-[1px] p-2 mt-3 ${anim}`}
+    >
+      <div
+        className="w-full overflow-hidden rounded-xl border border-dashed border-neutral-700/60"
+        style={{ aspectRatio: "1200 / 630" }}
+      >
+        <LinkLike href={link} disableLinks={disableLinks} className="block w-full h-full cursor-pointer">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover cursor-pointer"
+          />
+        </LinkLike>
+      </div>
+      <div className="m-3">
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="text-neutral-100 text-sm md:text-base leading-snug line-clamp-2">
+            {title}
+          </h3>
+          <LinkLike
+            href={link}
+            disableLinks={disableLinks}
+            className="text-violet-300 hover:text-purple-500 cursor-pointer flex-shrink-0"
+          >
+            <FiLink size={15} />
+          </LinkLike>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -1,11 +1,13 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import {
   profile,
   experiences,
   projects,
   achievements,
   education,
+  blogs,
 } from "@/lib/ResumeData";
 import {
   AchievementCard,
@@ -13,10 +15,13 @@ import {
   ProfileCard,
   EducationCard,
   ProjectCardV2,
+  BlogCard,
 } from "./Cards";
 import Footer from "./Footer";
 import { Socials } from "./baseComponents/Socials";
 import { useExpandedExperience } from "@/context/ExpandedExperienceContext";
+
+const VISIBLE_BLOGS_COUNT = 4;
 
 export default function LegacyContent() {
   const { isExpanded, toggleExpanded } = useExpandedExperience();
@@ -87,6 +92,30 @@ export default function LegacyContent() {
                 period={e.period}
               />
             ))}
+          </div>
+
+          <div className="blogs mt-5">
+            <h2 className="heading3 section-title">BLOGS</h2>
+            <div className="flex flex-wrap justify-between">
+              {blogs.slice(0, VISIBLE_BLOGS_COUNT).map((b) => (
+                <BlogCard
+                  key={b.title}
+                  title={b.title}
+                  link={b.link}
+                  image={b.image}
+                />
+              ))}
+            </div>
+            {blogs.length > VISIBLE_BLOGS_COUNT && (
+              <div className="flex justify-center mt-4">
+                <Link
+                  href="/blogs"
+                  className="text-sm text-violet-400 hover:text-violet-300 transition-colors cursor-pointer"
+                >
+                  View all blogs →
+                </Link>
+              </div>
+            )}
           </div>
           <Socials />
           <Footer />

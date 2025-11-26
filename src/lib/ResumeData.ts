@@ -44,6 +44,12 @@ export type Education = {
   period: string;
 };
 
+export type Blog = {
+  title: string;
+  link: string;
+  image: string;
+};
+
 export type Socials = {
   github: string;
   linkedin: string;
@@ -234,5 +240,33 @@ export const education: Education[] = [
     degree: "Higher Education",
     institute: "Army Public School Dighi.",
     period: "2020-2021",
+  },
+];
+
+export const blogs: Blog[] = [
+  {
+    title: "Doing Dev in 2025: How I Integrated AI into My Build Cycle",
+    link: "https://medium.com/@harshalmukundapatil/doing-dev-in-2025-how-i-integrated-ai-into-my-build-cycle-56ff65ddc76a",
+    image: "https://miro.medium.com/v2/1*hhJ1xSZMNdoN-25ocrzylg.png",
+  },
+  {
+    title: "Replacing Paid Logo APIs with an AI-Powered Pipeline",
+    link: "https://medium.com/@harshalmukundapatil/replacing-paid-logo-apis-with-an-ai-powered-prefect-pipeline-ef67ed9fbdbc",
+    image: "https://miro.medium.com/v2/1*TABMPB_tdhD_hBOwzLYqDQ.png",
+  },
+  {
+    title: "My Dev Journey Till College: A Late-Night Reflection",
+    link: "https://medium.com/@harshalmukundapatil/my-dev-journey-till-college-a-late-night-reflection-6a8d64b6d294",
+    image: "https://miro.medium.com/v2/1*0lArHAcDV2pQ4ad1hZPsYw.jpeg",
+  },
+  {
+    title: "Summer Internship at Fyle",
+    link: "https://medium.com/@harshalmukundapatil/summer-internship-at-fyle-8686994d862e",
+    image: "https://miro.medium.com/v2/1*pinGRG9BG4F5VQCl0sEEYQ.png",
+  },
+  {
+    title: "ESLint and Enforcing Code Quality",
+    link: "https://medium.com/@harshalmukundapatil/eslint-and-enforcing-code-quality-5d15737a8eb1",
+    image: "https://miro.medium.com/v2/0*CBx5NtHIAc-mYrT5",
   },
 ];
