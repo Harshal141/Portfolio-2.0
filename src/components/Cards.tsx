@@ -5,7 +5,8 @@ import React from "react";
 import Image from "next/image";
 import TextType from "./TextType";
 import { CardBase, LinkLike } from "./baseComponents/CardBuilder";
-import { FiLink } from "react-icons/fi";
+import { FiLink, FiChevronDown } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function ProfileCard(profile: Profile) {
   return (
@@ -48,6 +49,8 @@ export function ProfileCard(profile: Profile) {
   );
 }
 
+const VISIBLE_BULLETS_COUNT = 2;
+
 export function ExperienceCard({
   title,
   company,
@@ -57,6 +60,8 @@ export function ExperienceCard({
   bullets,
   disableLinks,
   disableAnimations,
+  expanded,
+  onToggleExpand,
 }: {
   title: string;
   company: string;
@@ -66,7 +71,13 @@ export function ExperienceCard({
   bullets?: string[];
   disableLinks?: boolean;
   disableAnimations?: boolean;
+  expanded?: boolean;
+  onToggleExpand?: () => void;
 }) {
+  const hasMoreBullets = bullets && bullets.length > VISIBLE_BULLETS_COUNT;
+  const initialBullets = bullets?.slice(0, VISIBLE_BULLETS_COUNT) || [];
+  const extraBullets = bullets?.slice(VISIBLE_BULLETS_COUNT) || [];
+
   return (
     <CardBase disableAnimations={disableAnimations}>
       <div className="my-1 flex items-start justify-between gap-3">
@@ -91,12 +102,55 @@ export function ExperienceCard({
           {period}
         </div>
       </div>
-      {bullets && bullets.length > 0 && (
+      {initialBullets.length > 0 && (
         <ul className="space-y-1 text-neutral-400 text-sm list-disc pl-5">
-          {bullets.map((b, i) => (
+          {initialBullets.map((b, i) => (
             <li key={i}>{b}</li>
           ))}
         </ul>
+      )}
+      <AnimatePresence initial={false}>
+        {expanded && extraBullets.length > 0 && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <ul className="space-y-1 text-neutral-400 text-sm list-disc pl-5 pt-1">
+              {extraBullets.map((b, i) => (
+                <motion.li
+                  key={`extra-${i}`}
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.2,
+                    ease: "easeOut",
+                    delay: 0.1 + i * 0.06,
+                  }}
+                >
+                  {b}
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {hasMoreBullets && onToggleExpand && (
+        <button
+          onClick={onToggleExpand}
+          className="mt-2 flex items-center gap-1 text-xs text-violet-400 hover:text-violet-300 transition-colors duration-300"
+        >
+          <motion.span
+            animate={{ rotate: expanded ? 180 : 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="flex items-center"
+          >
+            <FiChevronDown size={14} />
+          </motion.span>
+          {expanded ? "Show less" : `Show ${extraBullets.length} more`}
+        </button>
       )}
     </CardBase>
   );

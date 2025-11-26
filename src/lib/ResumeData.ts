@@ -126,8 +126,10 @@ export const experiences: Experience[] = [
     period: "Dec 2024 - Present",
     bullets: [
       "Designed and implemented a scalable news feed architecture from low-level design to production deployment using Prefect for orchestration. The system processes over 100K+ news articles weekly, achieving 80%+ entity coverage across brands and manufacturers.",
-      "Built a multi-service AI verification system for automating new user approval workflows — integrating Python-based AI models, a Java backend, and a TypeScript scraper. Improved approval rates from 25% to 40%.",
+      "Developed a brand tagging and enrichment pipeline to automatically fetch, process, and associate news with relevant entities, improving coverage and discovery accuracy.",
+      "Built a multi-service AI verification system for automating new user approval workflows — integrating Python-based AI models, a Java backend, and a TypeScript scraper. Improved approval rates from 25% to 60%",
       "Developed Prefect pipelines to enrich and verify user data through public certification sources such as Organic, FSC, and FDA Recall databases, ensuring data integrity and compliance.",
+      "Collaborated closely with product and data teams to iterate rapidly on data-driven solutions in a fast-paced startup environment.",
     ],
   },
   {
@@ -136,8 +138,9 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.fylehq.com/",
     period: "Jul 2023 - Mar 2024 · Remote",
     bullets: [
-      "Worked closely with the CTO to develop AWS Lambda automation plus integrating services like enforcing code quality standards with ESLint, reducing manual efforts, and improving code maintainability",
+      "Worked closely with the CTO to develop AWS Lambda automation plus integrating services like enforcing code quality standards with ESLint, reducing manual efforts, and improving code maintainability.",
       "Engineered AWS Lambda functions for automation in ClickUp and integrated APIs to enhance team productivity by 50%.",
+      "Designed, implemented, and tested engaging UIs and services for the Fyle web app using Angular.",
     ],
   },
   {
@@ -164,7 +167,7 @@ export const projects: Project[] = [
     tech: ["React.js", "Node.js", "Tailwind CSS", "Project Management"],
     description:
       "Anubhav is an interview-sharing platform for students of AIT.",
-    repoUrl: "https://anubhav.aitoss.club/",
+    repoUrl: "https://anubhav.ossclub.in/",
     img: "/project/anubhav.png",
   },
   {

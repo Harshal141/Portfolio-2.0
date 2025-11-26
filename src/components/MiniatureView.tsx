@@ -16,10 +16,12 @@ import {
 } from "./Cards";
 import Footer from "./Footer";
 import { Socials } from "./baseComponents/Socials";
+import { useExpandedExperience } from "@/context/ExpandedExperienceContext";
 
 export default function MiniatureView() {
   const panelLeftRef = useRef<HTMLDivElement | null>(null);
   const panelContentRef = useRef<HTMLDivElement | null>(null);
+  const { isExpanded } = useExpandedExperience();
 
   useEffect(() => {
     const panelLeft = panelLeftRef.current;
@@ -70,19 +72,23 @@ export default function MiniatureView() {
 
             <div className="workExp mt-5">
               <p className="heading3 section-title">WORK EXPERIENCE</p>
-              {experiences.map((e) => (
-                <ExperienceCard
-                  key={`${e.title}-${e.company}-${e.period}`}
-                  title={e.title}
-                  company={e.company}
-                  companyUrl={e.companyUrl}
-                  location={e.location}
-                  period={e.period}
-                  bullets={e.bullets}
-                  disableLinks
-                  disableAnimations
-                />
-              ))}
+              {experiences.map((e) => {
+                const key = `${e.title}-${e.company}-${e.period}`;
+                return (
+                  <ExperienceCard
+                    key={key}
+                    title={e.title}
+                    company={e.company}
+                    companyUrl={e.companyUrl}
+                    location={e.location}
+                    period={e.period}
+                    bullets={e.bullets}
+                    expanded={isExpanded(key)}
+                    disableLinks
+                    disableAnimations
+                  />
+                );
+              })}
             </div>
 
             <div className="projects mt-5">

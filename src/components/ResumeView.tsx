@@ -16,8 +16,11 @@ import {
 } from "./Cards";
 import Footer from "./Footer";
 import { Socials } from "./baseComponents/Socials";
+import { useExpandedExperience } from "@/context/ExpandedExperienceContext";
 
 export default function LegacyContent() {
+  const { isExpanded, toggleExpanded } = useExpandedExperience();
+
   return (
     <div className="constrain left_constrain">
       <div className="panel p-md-10 p-2">
@@ -26,17 +29,22 @@ export default function LegacyContent() {
 
           <div className="workExp mt-5">
             <p className="heading3 section-title">WORK EXPERIENCE</p>
-            {experiences.map((e) => (
-              <ExperienceCard
-                key={`${e.title}-${e.company}-${e.period}`}
-                title={e.title}
-                company={e.company}
-                companyUrl={e.companyUrl}
-                location={e.location}
-                period={e.period}
-                bullets={e.bullets}
-              />
-            ))}
+            {experiences.map((e) => {
+              const key = `${e.title}-${e.company}-${e.period}`;
+              return (
+                <ExperienceCard
+                  key={key}
+                  title={e.title}
+                  company={e.company}
+                  companyUrl={e.companyUrl}
+                  location={e.location}
+                  period={e.period}
+                  bullets={e.bullets}
+                  expanded={isExpanded(key)}
+                  onToggleExpand={() => toggleExpanded(key)}
+                />
+              );
+            })}
           </div>
 
           <div className="projects mt-5">

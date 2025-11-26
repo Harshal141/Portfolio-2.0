@@ -2,11 +2,31 @@
 import PixelBlast from "@/components/LiquidEther";
 import LegacyContent from "@/components/ResumeView";
 import MiniatureView from "@/components/MiniatureView";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Notification } from "@/components/baseComponents/Notification";
+import { ExpandedExperienceProvider } from "@/context/ExpandedExperienceContext";
+
+const NOTIF_DISMISS_KEY = "blog-notif-dismissed";
+const DISMISS_DURATION_MS = 7 * 24 * 60 * 60 * 1000; // 1 week
 
 export default function Home() {
-  const [showNotif, setShowNotif] = useState(true);
+  const [showNotif, setShowNotif] = useState(false);
+
+  useEffect(() => {
+    const dismissedAt = localStorage.getItem(NOTIF_DISMISS_KEY);
+    if (dismissedAt) {
+      const elapsed = Date.now() - parseInt(dismissedAt, 10);
+      if (elapsed < DISMISS_DURATION_MS) {
+        return; // Still within dismiss period
+      }
+    }
+    setShowNotif(true);
+  }, []);
+
+  const handleDismiss = () => {
+    localStorage.setItem(NOTIF_DISMISS_KEY, Date.now().toString());
+    setShowNotif(false);
+  };
 
   return (
     <main
@@ -30,14 +50,16 @@ export default function Home() {
           transparent
         />
       </div>
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <MiniatureView />
-        <LegacyContent />
-      </div>
+      <ExpandedExperienceProvider>
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <MiniatureView />
+          <LegacyContent />
+        </div>
+      </ExpandedExperienceProvider>
 
       <Notification
         show={showNotif}
-        onClose={() => setShowNotif(false)}
+        onClose={handleDismiss}
         title="New Blog Available 🚀"
         message="Exploring AI-driven UI testing with Mocha."
         site="medium.com/@harshalmukundapatil"
