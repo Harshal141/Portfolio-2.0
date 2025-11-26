@@ -72,6 +72,7 @@ export default function LegacyContent() {
                 org={a.org}
                 period={a.period}
                 points={a.points}
+                url={a.url}
               />
             ))}
           </div>

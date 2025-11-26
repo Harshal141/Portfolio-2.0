@@ -17,7 +17,7 @@ export function LinkLike({
     return <span {...rest}>{children}</span>;
   }
   return (
-    <a href={href} {...rest} target="_blank" rel="noopener noreferrer">
+    <a href={href} {...rest} target="_blank" rel="noopener noreferrer" className={`cursor-pointer ${rest.className || ""}`}>
       {children}
     </a>
   );

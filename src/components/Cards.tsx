@@ -140,7 +140,7 @@ export function ExperienceCard({
       {hasMoreBullets && onToggleExpand && (
         <button
           onClick={onToggleExpand}
-          className="mt-2 flex items-center gap-1 text-xs text-violet-400 hover:text-violet-300 transition-colors duration-300"
+          className="mt-2 flex items-center gap-1 text-xs text-violet-400 hover:text-violet-300 transition-colors duration-300 cursor-pointer"
         >
           <motion.span
             animate={{ rotate: expanded ? 180 : 0 }}
@@ -180,12 +180,15 @@ export function ProjectCardV2({
     <div
       className={`w-full md:w-[49%] lg:w-[49%] rounded-md border border-dashed border-neutral-700/60 shadow-lg backdrop-blur-[1px] p-2 mt-3 ${anim}`}
     >
-      <div className="w-full h-[220px] overflow-hidden rounded-xl border border-dashed border-neutral-700/60">
-        <LinkLike href={repoUrl} disableLinks={disableLinks}>
+      <div
+        className="w-full overflow-hidden rounded-xl border border-dashed border-neutral-700/60"
+        style={{ aspectRatio: "1200 / 630" }}
+      >
+        <LinkLike href={repoUrl} disableLinks={disableLinks} className="block w-full h-full cursor-pointer">
           <img
             src={img || "/project/anubhav.png"}
             alt={title}
-            className="w-full h-full object-cover object-bottom"
+            className="w-full h-full object-cover object-bottom cursor-pointer"
           />
         </LinkLike>
       </div>
@@ -198,7 +201,7 @@ export function ProjectCardV2({
             <LinkLike
               href={repoUrl}
               disableLinks={disableLinks}
-              className="text-violet-300 hover:text-purple-500"
+              className="text-violet-300 hover:text-purple-500 cursor-pointer"
             >
               <FiLink size={15} />
             </LinkLike>
@@ -227,19 +230,34 @@ export function AchievementCard({
   org,
   period,
   points,
+  url,
   disableAnimations,
+  disableLinks,
 }: {
   title: string;
   org: string;
   period: string;
   points?: string[];
+  url?: string;
   disableAnimations?: boolean;
+  disableLinks?: boolean;
 }) {
   return (
     <CardBase disableAnimations={disableAnimations}>
       <div className="flex items-start justify-between gap-3 mb-1">
-        <div className="text-neutral-100 text-base md:text-lg leading-snug">
-          {title}
+        <div className="flex items-center gap-2">
+          <span className="text-neutral-100 text-base md:text-lg leading-snug">
+            {title}
+          </span>
+          {url && !disableLinks && (
+            <LinkLike
+              href={url}
+              disableLinks={disableLinks}
+              className="text-violet-300 hover:text-purple-500 transition-colors cursor-pointer"
+            >
+              <FiLink size={15} />
+            </LinkLike>
+          )}
         </div>
         <div className="text-violet-300 text-[0.7rem] tracking-wide">
           {period}

@@ -117,7 +117,9 @@ export default function MiniatureView() {
                   org={a.org}
                   period={a.period}
                   points={a.points}
+                  url={a.url}
                   disableAnimations
+                  disableLinks
                 />
               ))}
             </div>

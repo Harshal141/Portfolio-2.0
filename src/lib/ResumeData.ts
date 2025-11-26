@@ -35,6 +35,7 @@ export type Achievement = {
   org: string;
   period: string;
   points?: string[];
+  url?: string;
 };
 
 export type Education = {
@@ -202,6 +203,7 @@ export const achievements: Achievement[] = [
     org: "Major League Hacking",
     period: "2025",
     points: ["Recognized among MLH's Top 50 Hackers globally for 2025."],
+    url: "https://top.mlh.io/2025/profiles/harshal-patil",
   },
   {
     title: "Hack4TKM 2024 Winner",
@@ -210,6 +212,7 @@ export const achievements: Achievement[] = [
     points: [
       "Secured first position amongst 1000+ teams and Won a cash prize of 1Lakh.",
     ],
+    url: "https://www.linkedin.com/posts/army-institute-of-technology-ait-pune_congratulationsto-ait-students-extraordinary-activity-7173975361485967360-qpD5/",
   },
   {
     title: "HackOdisha 3.0 Runner Up",
