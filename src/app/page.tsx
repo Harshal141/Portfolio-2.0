@@ -2,7 +2,8 @@
 import PixelBlast from "@/components/LiquidEther";
 import LegacyContent from "@/components/ResumeView";
 import MiniatureView from "@/components/MiniatureView";
-import { useState, useEffect } from "react";
+import Loader from "@/components/Loader";
+import { useState, useEffect, useCallback } from "react";
 import { Notification } from "@/components/baseComponents/Notification";
 import { ExpandedExperienceProvider } from "@/context/ExpandedExperienceContext";
 
@@ -11,6 +12,11 @@ const DISMISS_DURATION_MS = 7 * 24 * 60 * 60 * 1000; // 1 week
 
 export default function Home() {
   const [showNotif, setShowNotif] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadComplete = useCallback(() => {
+    setIsLoading(false);
+  }, []);
 
   useEffect(() => {
     const dismissedAt = localStorage.getItem(NOTIF_DISMISS_KEY);
@@ -27,6 +33,10 @@ export default function Home() {
     localStorage.setItem(NOTIF_DISMISS_KEY, Date.now().toString());
     setShowNotif(false);
   };
+
+  if (isLoading) {
+    return <Loader onLoadComplete={handleLoadComplete} minDisplayTime={1500} />;
+  }
 
   return (
     <main

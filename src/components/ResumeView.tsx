@@ -82,18 +82,6 @@ export default function LegacyContent() {
             ))}
           </div>
 
-          <div className="education mt-5">
-            <h2 className="heading3 section-title">EDUCATION</h2>
-            {education.map((e, i) => (
-              <EducationCard
-                key={`${e.degree}-${i}`}
-                degree={e.degree}
-                institute={e.institute}
-                period={e.period}
-              />
-            ))}
-          </div>
-
           <div className="blogs mt-5">
             <h2 className="heading3 section-title">BLOGS</h2>
             <div className="flex flex-wrap justify-between">
@@ -116,6 +104,18 @@ export default function LegacyContent() {
                 </Link>
               </div>
             )}
+          </div>
+
+          <div className="education mt-5">
+            <h2 className="heading3 section-title">EDUCATION</h2>
+            {education.map((e, i) => (
+              <EducationCard
+                key={`${e.degree}-${i}`}
+                degree={e.degree}
+                institute={e.institute}
+                period={e.period}
+              />
+            ))}
           </div>
           <Socials />
           <Footer />
