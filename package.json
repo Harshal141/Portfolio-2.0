@@ -11,7 +11,7 @@
     "gsap": "^3.13.0",
     "lucide-react": "^0.552.0",
     "motion": "^12.23.22",
-    "next": "15.5.4",
+    "next": "15.5.9",
     "postprocessing": "^6.37.8",
     "react": "19.1.0",
     "react-dom": "19.1.0",
